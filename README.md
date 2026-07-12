@@ -8,7 +8,7 @@ An Apps Script that computes a document-submission deadline from a base expirati
 
 Given a status/contract expiration date, the type of case being filed, and whether a rush fee applies, this script works out how many business days before that expiration the paperwork needs to be submitted — skipping weekends, a fixed list of US federal-style holidays, and a year-end office closure block (Dec 22–Jan 2).
 
-It's the Apps Script counterpart to the same rule set already published as a plain Google Sheets array formula in [Google-Sheets-Formulas](https://github.com/joe85black/Google-Sheets-Formulas) (`formulas/deadline-formula.txt`) — this version recalculates on demand for a single row (e.g. from a button or menu item) instead of running live as a per-row formula.
+It's the Apps Script counterpart to the same rule set already published as a plain Google Sheets array formula in [google-sheets-formulas](https://github.com/joe85black/google-sheets-formulas) (`formulas/deadline-formula.txt`) — this version recalculates on demand for a single row (e.g. from a button or menu item) instead of running live as a per-row formula.
 
 ## Sheet structure
 
@@ -29,7 +29,7 @@ See [`calculateDeadline.gs`](./calculateDeadline.gs) for the full script and eve
 
 ## Case Category Key
 
-Genericized consistently with the rest of this account's Google Sheets repos ([Google-Sheets-Formulas](https://github.com/joe85black/Google-Sheets-Formulas), [client-case-scheduler](https://github.com/joe85black/client-case-scheduler)):
+Genericized consistently with the rest of this account's Google Sheets repos ([google-sheets-formulas](https://github.com/joe85black/google-sheets-formulas), [client-case-scheduler](https://github.com/joe85black/client-case-scheduler)):
 
 | Placeholder | Stands in for |
 |---|---|
@@ -45,7 +45,7 @@ Genericized consistently with the rest of this account's Google Sheets repos ([G
 
 ## Sample data
 
-[`sample-data/deadlines-sample.csv`](./sample-data/deadlines-sample.csv) has a handful of fabricated example rows spanning each rush-fee tier and category, with the column D result already computed, so you can see the rule set's output without needing to run the script yourself.
+[`sample-data/deadlines-sample.csv`](./sample-data/deadlines-sample.csv) has 18 fabricated example rows covering every rule branch — each rush-fee tier, category, package type, and dependents/status/contract variant — with the column D result already computed, so you can see the rule set's output without needing to run the script yourself. The last two rows demonstrate holiday handling: one deadline is pushed back across Thanksgiving, and one crosses the Dec 22 – Jan 2 year-end closure block.
 
 ## Setup
 
