@@ -81,11 +81,15 @@ function calculateDeadlineRow2() {
     // Dec 22 – Jan 2
     let holidayBlockStart = new Date(year, 11, 22);
     let holidayBlockEnd = new Date(year + 1, 0, 2);
+    // Jan 1–2 belong to the block that started the previous December
+    let prevBlockStart = new Date(year - 1, 11, 22);
+    let prevBlockEnd = new Date(year, 0, 2);
 
     for (let h of holidays) {
       if (date.toDateString() === h.toDateString()) return false;
     }
     if (date >= holidayBlockStart && date <= holidayBlockEnd) return false;
+    if (date >= prevBlockStart && date <= prevBlockEnd) return false;
 
     return true;
   }
