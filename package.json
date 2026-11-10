@@ -1,0 +1,13 @@
+{
+  "name": "document-deadline-calculator",
+  "version": "2.0.0",
+  "description": "Google Apps Script that works out the latest start date for a document submission, counting back business or calendar days around configurable work days, U.S. holidays and closures.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/deadline-calculator.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
